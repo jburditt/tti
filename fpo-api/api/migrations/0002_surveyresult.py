@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
-import django.contrib.postgres.fields.jsonb
+import django.db.models.jsonb
 from django.db import migrations, models
 import django.db.models.deletion
 
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('update_timestamp', models.DateTimeField(auto_now=True, null=True)),
                 ('completed_timestamp', models.DateTimeField(auto_now=True, null=True)),
                 ('survey_type', models.CharField(max_length=100)),
-                ('result', django.contrib.postgres.fields.jsonb.JSONField(blank=True)),
+                ('result', django.db.models.jsonb.JSONField(blank=True)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='survey_results', to=settings.AUTH_USER_MODEL)),
             ],
         ),
