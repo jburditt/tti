@@ -1,8 +1,13 @@
 # Main
-django>=2.1.6,<2.2  # 2.2 increases minimum sqlite version, which is not supported on the centos image
-djangorestframework>=3.11.0,<4
+django==4.0.7
+django-filter>=21.1,<22
+djangorestframework>=3.13.1,<4
 djangorestframework-bulk>=0.2.1,<1
-django-cors-headers>=2.4.0,<3
+django-cors-headers>=3.10.0,<4
+# django>=2.1.6,<2.2  # 2.2 increases minimum sqlite version, which is not supported on the centos image
+# djangorestframework>=3.11.0,<4
+# djangorestframework-bulk>=0.2.1,<1
+# django-cors-headers>=2.4.0,<3
 git+https://github.com/bcgov/django-oidc-rp.git@50e6fa143e61b04849b4c66beef078be0d7669de#egg=django-oidc-rp
 
 # Database managment
