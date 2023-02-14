@@ -4,7 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    self.__logger = logging.getLogger(AbstractUser)
+    # self.__logger = logging.getLogger(AbstractUser)
+    print(AbstractUser)
     accepted_terms_at = models.DateTimeField(blank=True, null=True)
 
     universal_id = models.CharField(max_length=500, blank=True, null=True)
