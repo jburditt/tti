@@ -3,7 +3,7 @@ django==4.0.7
 djangorestframework>=3.13.1,<4
 djangorestframework-bulk>=0.2.1,<1
 django-cors-headers>=3.10.0,<4
-git+https://github.com/bcgov/django-oidc-rp.git@50e6fa143e61b04849b4c66beef078be0d7669de#egg=django-oidc-rp
+git+https://github.com/hassananv/django-oidc-rp-v1.git@a1657bcd37694cabcd923e0b1db8171b9c6c03f3#egg=django-oidc-rp
 
 # Database managment
 psycopg2-binary>=2.7.3.1,<3
