@@ -86,7 +86,7 @@ export class HrtAreaAndGroundsOfDiscriminationComponent
                   {
                     value: "Age (19 or over)",
                     visibleIf:
-                      "{panel.What is the Area of Discrimination?} <> 'Membership in a Union, employer’s organization, or occupational associations'",
+                      "{panel.What is the Area of Discrimination?} <> 'Purchase of property'",
                   },
                   {
                     value: "Family Status",
@@ -404,14 +404,14 @@ export class HrtAreaAndGroundsOfDiscriminationComponent
     });
 
     this.survey.onAfterRenderQuestion.add(function (survey, options) {
-        console.log(options);
-        // Return if there is no description to show in popup
-        if (!options.question.description) return;
-        // Add a button;
-        console.log("options: ", options.question.description);
-        const desc = options.htmlElement.querySelector(".sv_q_description");
-        desc.innerHTML = options.question.description;
-      });
+      console.log(options);
+      // Return if there is no description to show in popup
+      if (!options.question.description) return;
+      // Add a button;
+      console.log("options: ", options.question.description);
+      const desc = options.htmlElement.querySelector(".sv_q_description");
+      desc.innerHTML = options.question.description;
+    });
 
     Survey.SurveyNG.render("surveyElementHRT", { model: this.survey });
     console.log("hi!3");
