@@ -32,9 +32,9 @@ export class AppComponent implements AfterViewInit, DoCheck, OnInit {
     missionService.missionConfirmed$.subscribe((formData) => {
       console.log("Event Captured on App Component! ", formData);
       if (!formData.data) {
-        this.allFormData = formData
-        missionService.announceMission(this.allFormData)
-        return
+        this.allFormData = formData;
+        missionService.announceMission(this.allFormData);
+        return;
       }
       let { name, data } = formData;
       this.allFormData[name] = data;
@@ -48,7 +48,7 @@ export class AppComponent implements AfterViewInit, DoCheck, OnInit {
     });
   }
   ngOnInit() {
-      this.initSurvey()
+    this.initSurvey();
   }
   initSurvey() {
     // addQuestionTypes(Survey);
@@ -73,8 +73,6 @@ export class AppComponent implements AfterViewInit, DoCheck, OnInit {
     Survey.StylesManager.applyTheme("bootstrap");
   }
   ngDoCheck() {
-    console.log(111111111111);
-    console.log(this.router.url.includes("hrt-group"));
     if (this.router.url.includes("hrt-group")) {
       this.complaintTitle = "Form 1.3 - Group or Class Complaint";
       document.title = "File a Group Complaint ";
@@ -82,7 +80,7 @@ export class AppComponent implements AfterViewInit, DoCheck, OnInit {
       this.complaintTitle = "Form 1.4 - Retaliation Complaint";
       document.title = "File a Retaliation Complaint ";
     } else {
-        this.complaintTitle = "Form 1.1 - Individual Complaint";
+      this.complaintTitle = "Form 1.1 - Individual Complaint";
       document.title = "File a Individual Complaint ";
     }
   }
@@ -97,7 +95,7 @@ export class AppComponent implements AfterViewInit, DoCheck, OnInit {
     });
 
     if (environment.matomoUrl && environment.matomoSiteId) {
-        return
+      return;
       this.matomoInjector.init({
         url: environment.matomoUrl,
         id: environment.matomoSiteId,

@@ -157,7 +157,7 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
             type: "html",
             name: "question1",
             html:
-              "<p><strong>Purpose of collecting contact information:</strong> The Tribunal and Respondents use your contact information to communicate with you about the complaint. See <a href='http://www.bchrt.bc.ca/law-library/policies/privacy.htm' target='_blank'>Complaint Process Privacy Policy</a>.</p><p>You must give an address where all parties can send you documents. Give the address of the person who will communicate with the Tribunal.</p><p>The Tribunal usually communicates by email. If possible, give an email address where all parties can reach you. If you have confidential contact information, do not put it on this form. Provide it separately by email, mail, fax, or in person.</p><p><strong>Important information: </strong>A document sent to an address below is considered to be received by the complainant. You must notify the Tribunal of any change to the address for delivery.</p>",
+              "<p>You must provide</p><ol type=\"a\"><li>an address where all parties can send you documents. Give the address of the person who will communicate with the Tribunal.</li><li>an email address, if possible. The Tribunal and parties usually communicate by email.</li></ol><p>If you have contact information that you want to keep confidential, do not put it on this form. Provide it by email, mail, fax, or in person.</p><p>  <strong>You must notify the Tribunal of any change to the address for delivery.</strong> A document sent to an address below is considered received by the complainant.</p>",
           },
           {
             type: "text",
@@ -235,7 +235,7 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
             width: "40%",
             maxLength: 255,
             title: "Email",
-            validators: [ { type: "email" } ],
+            validators: [{ type: "email" }],
             // isRequired: true,
           },
         ],
@@ -243,21 +243,38 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
         title: "Complainant’s address for delivery",
       },
       {
-        name: "Respondent Contact Information",
+        name: "Who discriminated against you (Respondent)?",
         elements: [
           {
             type: "html",
             name: "question5",
             html:
-              "<h4>\nImportant information about Respondents:\n</h4>\n<ol>\n<li>\nThe Respondent is the person or organization you say discriminated. Usually, there is only one.\n</li>\n<li>Usually the Respondent is an organization such as: corporate employer, landlord, government body, service provider, business or union. Organizations are usually responsible for their employees’ actions. Make the organization Respondent #1.</li>\n<li>An individual can be a Respondent. Only name the person who you say discriminated against you. For example, name the person who harassed you. Do not name the person who only handed you a letter firing you.</li>\n</ol>\n<p>\n<strong>Email:</strong> Email is fastest. If possible, give an email address where we can send your complaint. Choose someone that you think has authority to respond to your complaint. For example, someone in the human resources, or legal department. </p>",
+              "<p><strong>Information about Respondents:</strong></p>Usually, there is only <strong>one</strong> Respondent. Usually, the only Respondent is an <strong>organization</strong> such as:<ul><li>A company or business that employed you, in a complaint about employment.<li>A landlord, in a complaint about a tenancy.<li>A government body or business, in a complaint about services.<li>A union, in a complaint about union membership. Organizations are usually responsible for their employees’ conduct.</ul><p>Only name another respondent if they are responsible for the same discrimination that this complaint is about.<p>Only name a person as a respondent if:<ul><li>the person discriminated against you, and<li>you have a reason to seek a remedy against them. For example:</li><ul><li>no one else is responsible for the discrimination,<li>no one else can provide the remedy, or<li>the person’s conduct deserves a remedy</ul></ul>",
+          },
+          {
+            type: "checkbox",
+            name: "Check here to confirm you want to name an organization as Respondent #1.",
+            choices: [
+              {
+                value: "Yes, I want to name the organization that discriminated against me. ",
+                text: "Yes, I want to name the organization that discriminated against me. ",
+              },
+            ],
           },
           {
             type: "paneldynamic",
-            name: "Respondents Contact Information",
+            name: "Respondent's Contact Information",
             templateElements: [
+              {
+                type: "html",
+                name: "question6",
+                html:
+                  "<p>Give the correct legal name. (Read about <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >how to find the correct legal name</a> under <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >Naming a Respondent</a> at <a href=https://www.bchrt.bc.ca/ >www.bchrt.ca</a>)."
+              },
               {
                 type: "text",
                 name: "Name of the Respondent",
+                description: " [If naming an employer, give the name and address from a paystub, T4, or employment contract.]",
                 maxLength: 40,
                 isRequired: true,
               },
@@ -265,17 +282,17 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
                 type: "text",
                 name: "Relationship to you",
                 title:
-                  "Relationship to you (For example: your employer, landlord, government body)",
+                  "Relationship to you (For example: your employer, landlord, service provider)",
                 isRequired: true,
                 maxLength: 255,
               },
               {
                 type: "text",
                 name: "Respondent Contact Email",
-                width: "40%",
                 title: "Email",
+                description: "Email is fastest. If possible, give an email address where we can send your complaint. Choose someone that you think has authority to respond to your complaint. For example, the owner, executive director, or someone in the human resources or legal department.",
                 maxLength: 255,
-                validators: [ { type: "email" } ],
+                validators: [{ type: "email" }],
                 // isRequired: true,
               },
               {
@@ -354,7 +371,7 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
             panelRemoveText: "REMOVE Above Respondent",
           },
         ],
-        title: "Respondent Contact Information",
+        title: "Who discriminated against you (Respondent)?",
       },
     ],
     showQuestionNumbers: "off",
@@ -365,11 +382,9 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
   constructor(private missionService: MissionService, private router: Router) {
     this.subscription = missionService.missionAnnounced$.subscribe(
       (allFormData) => {
-        console.log("allFormData", allFormData);
 
         if (allFormData.complainant) {
           this.formData = allFormData.complainant;
-          console.log("hi!");
         }
         this.subscription.unsubscribe();
       }
@@ -380,24 +395,17 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
   ngOnInit() {
-    // console.log("Survey.Survey.cssType", Survey.Survey.cssType);
-    // this.initSurvey();
-
     this.renderSurvey();
   }
 
   renderSurvey() {
-    console.log("hi!1");
     // let surveyModel =
     this.survey = new Survey.Model(this.json);
     this.survey.maxOthersLength = 255;
     if (this.formData) {
-      console.log("hi122!");
       this.survey.data = this.formData;
     }
-    console.log("hi!2");
     Survey.SurveyNG.render("surveyElementHRT", { model: this.survey });
-    console.log("hi!3");
   }
   handlePreviousStep() {
     if (this.survey.isFirstPage) {

@@ -114,7 +114,7 @@ export default {
           type: "html",
           name: "question1",
           html:
-            "<p><strong>Purpose of collecting contact information:</strong> The Tribunal and Respondents use your contact information to communicate with you about the complaint. The Tribunal may also use it to conduct surveys to evaluate and improve its services.</p><p><strong>Mailing address: </strong> You must give a mailing address.</p><p><strong>Email:</strong>The Tribunal usually communicates via email. If possible, give an email address where all parties can reach you. If you have confidential contact information, do not put it on this form. Put it in your cover email or letter.\n</p><p><strong>Important information:</strong>A document sent to an address below is deemed to be received by the complainant. You must notify the Tribunal of any change to the address for delivery.\n</p>",
+            "<p>You must provide</p><ol type=\"a\"><li>an address where all parties can send you documents. Give the address of the person who will communicate with the Tribunal.</li><li>an email address, if possible. The Tribunal and parties usually communicate by email.</li></ol><p>If you have contact information that you want to keep confidential, do not put it on this form. Provide it by email, mail, fax, or in person.</p><p>  <strong>You must notify the Tribunal of any change to the address for delivery.</strong> A document sent to an address below is considered received by the complainant.</p>",
         },
         {
           type: "text",

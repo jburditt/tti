@@ -26,7 +26,7 @@
         "Complainant Contact Cell Phone number": "1231231231", // optional
         "Complainant Contact Fax": "1231231231", // optional
         "Complainant Contact Email": "123@123.ca",
-        "Respondents Contact Information": [
+        "Respondent's Contact Information": [
             {
                 "Name of the Respondent": "te te",
                 "Relationship to you": "Canada",

@@ -462,26 +462,26 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             type: "text",
             name: "First name",
             isRequired: true,
-	          maxLength: 40,
+            maxLength: 40,
           },
           {
             type: "text",
             name: "Last name",
             isRequired: true,
-	          maxLength: 40,
+            maxLength: 40,
           },
           {
             type: "text",
             name: "Organization name",
             title: "Organization name (e.g. law firm, if applicable)",
-	          maxLength: 255,
+            maxLength: 255,
           },
           {
             type: "text",
             name:
               "Contact Preferred name - e.g. traditional name, nickname, alias",
             title: "Preferred name - e.g. traditional name, nickname, alias",
-	          maxLength: 255,
+            maxLength: 255,
           },
           {
             type: "radiogroup",
@@ -513,13 +513,13 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             type: "html",
             name: "question1",
             html:
-              "<p><strong>Purpose of collecting contact information:</strong> The Tribunal and Respondents use your contact information to communicate with you about the complaint. See <a href='http://www.bchrt.bc.ca/law-library/policies/privacy.htm' target='_blank'>Complaint Process Privacy Policy</a>.</p><p>You must give an address where all parties can send you documents. Give the address of the person who will communicate with the Tribunal.</p><p>The Tribunal usually communicates by email. If possible, give an email address where all parties can reach you. If you have confidential contact information, do not put it on this form. Provide it separately by email, mail, fax, or in person.</p><p><strong>Important information: </strong>A document sent to an address below is considered to be received by the complainant. You must notify the Tribunal of any change to the address for delivery.</p>",
+              "<p>You must provide</p><ol type=\"a\"><li>an address where all parties can send you documents. Give the address of the person who will communicate with the Tribunal.</li><li>an email address, if possible. The Tribunal and parties usually communicate by email.</li></ol><p>If you have contact information that you want to keep confidential, do not put it on this form. Provide it by email, mail, fax, or in person.</p><p>  <strong>You must notify the Tribunal of any change to the address for delivery.</strong> A document sent to an address below is considered received by the complainant.</p>",
           },
           {
             type: "text",
             name: "Complainant Contact Mailing address",
             title: "Mailing address",
-	          maxLength: 240,
+            maxLength: 240,
             // isRequired: true,
           },
           {
@@ -527,7 +527,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             name: "Complainant Contact City",
             width: "30%",
             title: "City ",
-	          maxLength: 40,
+            maxLength: 40,
             // isRequired: true,
           },
           {
@@ -558,7 +558,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             width: "30%",
             startWithNewLine: false,
             title: "Postal Code",
-	          maxLength: 10,
+            maxLength: 10,
             // isRequired: true,
           },
           {
@@ -566,7 +566,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             name: "Complainant Contact Phone number",
             width: "30%",
             title: "Phone number  ",
-	          maxLength: 255,
+            maxLength: 255,
             // isRequired: true,
           },
           {
@@ -575,7 +575,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             width: "30%",
             startWithNewLine: false,
             title: "Cell phone number",
-	          maxLength: 255,
+            maxLength: 255,
           },
           {
             type: "text",
@@ -583,35 +583,35 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             width: "30%",
             startWithNewLine: false,
             title: "Fax",
-	          maxLength: 255,
+            maxLength: 255,
           },
           {
             type: "text",
             name: "Complainant Contact Email",
             width: "40%",
             title: "Email",
-	          maxLength: 255,
-            validators: [ { type: "email" } ],
+            maxLength: 255,
+            validators: [{ type: "email" }],
             // isRequired: true,
           },
         ],
         // visibleIf: "{Select only one option} <> 'The complainant'",
       },
       {
-        name: "Respondent Contact Information",
-        title: "Respondent Contact Information",
+        name: "Who discriminated against you (Respondent)?",
+        title: "Who discriminated against you (Respondent)?",
         elements: [
           {
             type: "html",
             name: "question5",
             html:
-              "<h4>\nImportant information about Respondents:\n</h4>\n<ol>\n<li>The Respondent is the person or organization you say retaliated against you. Usually, there is only one.\n</li>\n<li>Usually the Respondent is an organization such as: corporate employer, landlord, government body, service provider, business or union. Organizations are usually responsible for their employees’ actions. Make the organization Respondent #1.</li>\n<li>An individual can be a Respondent. Only name the person who you say retaliated against you. For example, you can name the person who made a decision that you think is retaliation. Do not name the person who only told you about the decision.</li>\n</ol>\n<p>\n<strong>Email:</strong> Email is fastest. If possible, give an email address where we can send your complaint. Choose someone that you think has authority to respond to your complaint. For example, someone in the human resources, or legal department. </p>",
+              "<p><strong>Information about Respondents:</strong></p>Usually, there is only <strong>one</strong> Respondent. Usually, the only Respondent is an <strong>organization</strong> such as:<ul><li>A company or business that employed you, in a complaint about employment.<li>A landlord, in a complaint about a tenancy.<li>A government body or business, in a complaint about services.<li>A union, in a complaint about union membership. Organizations are usually responsible for their employees’ conduct.</ul><p>Only name another respondent if they are responsible for the same discrimination that this complaint is about.<p>Only name a person as a respondent if:<ul><li>the person discriminated against you, and<li>you have a reason to seek a remedy against them. For example:</li><ul><li>no one else is responsible for the discrimination,<li>no one else can provide the remedy, or<li>the person’s conduct deserves a remedy</ul></ul>",
           },
           {
             type: "paneldynamic",
             panelAddText: "ADD Another Respondent",
             panelRemoveText: "REMOVE Above Respondent",
-            name: "Respondents Contact Information",
+            name: "Respondent's Contact Information",
             templateElements: [
               {
                 type: "text",
@@ -622,36 +622,36 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
               {
                 type: "text",
                 name: "Relationship to you",
-	              maxLength: 255,
+                maxLength: 255,
                 title:
-                  "Relationship to you (For example: your employer, landlord, government body)",
+                  "Relationship to you (For example: your employer, landlord, service provider)",
                 isRequired: true,
               },
               {
                 type: "text",
                 name: "Respondent Contact Email",
-	              maxLength: 255,
+                maxLength: 255,
                 width: "40%",
                 title: "Email",
-                validators: [ { type: "email" } ],
+                validators: [{ type: "email" }],
                 // isRequired: true,
               },
               {
                 type: "text",
                 name: "Mailing address",
-	              maxLength: 240,
+                maxLength: 240,
                 isRequired: true,
               },
               {
                 type: "text",
                 name: "Address line 2",
-	              maxLength: 240,
+                maxLength: 240,
               },
               {
                 type: "text",
                 name: "City",
                 isRequired: true,
-	              maxLength: 40,
+                maxLength: 40,
               },
               {
                 type: "dropdown",
@@ -678,7 +678,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
                 type: "text",
                 name: "Postal Code",
                 startWithNewLine: false,
-	              maxLength: 10,
+                maxLength: 10,
                 // isRequired: true,
               },
               {
@@ -686,7 +686,7 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
                 name: "Respondent Contact Phone number",
                 width: "30%",
                 title: "Phone number  ",
-	              maxLength: 255,
+                maxLength: 255,
                 // isRequired: true,
               },
               {
@@ -695,14 +695,14 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
                 width: "30%",
                 startWithNewLine: false,
                 title: "Cell phone number",
-	              maxLength: 255,
+                maxLength: 255,
               },
               {
                 type: "text",
                 name: "Respondent Contact Fax",
                 width: "30%",
                 startWithNewLine: false,
-	              maxLength: 255,
+                maxLength: 255,
                 title: "Fax",
               },
             ],

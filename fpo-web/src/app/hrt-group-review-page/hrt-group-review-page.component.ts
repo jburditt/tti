@@ -101,7 +101,7 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
           "gather evidence to support the complaint and put forward the best possible case to the Tribunal; and",
           "decide whether to hire a lawyer or legal advocate and instruct that person."
         ]
-      },"complaintSutability":{"Describe the Group or Class":"312123","Explain how the alleged discrimination is similar for all group or class members":"123213"},"respondentContact":{"Respondents Contact Information":[
+      },"complaintSutability":{"Describe the Group or Class":"312123","Explain how the alleged discrimination is similar for all group or class members":"123213"},"respondentContact":{"Respondent's Contact Information":[
         {
           "Name of the Respondent": "JHJ",
           "Mailing address": "V6N 2Z7",
@@ -148,14 +148,14 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
   show: boolean = false;
 
   padDate(dateValue) {
-      var dateVar = '' + dateValue;
-      var pad = '00';
-      return pad.substring(0, pad.length - dateVar.length) + dateVar;
-    }
+    var dateVar = '' + dateValue;
+    var pad = '00';
+    return pad.substring(0, pad.length - dateVar.length) + dateVar;
+  }
 
   getCurrentDate() {
     const today = new Date();
-    const date  =
+    const date =
       today.getFullYear() + "-" + this.padDate((today.getMonth() + 1)) + "-" + this.padDate(today.getDate());
     return date;
   }
@@ -168,11 +168,8 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
   ) {
     this.subscription = missionService.missionAnnounced$.subscribe(
       (allFormData) => {
-        console.log("allFormData", allFormData);
         if (allFormData) {
           this.formData = allFormData;
-          // this.formData = this.newFormData;
-          console.log(this.formData);
           for (let key in this.formData) {
             if (key == "home") {
               continue;
@@ -183,7 +180,7 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
               let result = respondents.reduce((acc, current) => {
                 return (
                   current[
-                    "Did all the conduct you say is discrimination happen in the last one year?"
+                  "Did all the conduct you say is discrimination happen in the last one year?"
                   ] === "No" && acc
                 );
               }, true);
@@ -193,7 +190,6 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
           }
 
           for (let key in this.formData["areaAndGrounds"]) {
-            console.log(key);
             if (key.includes("Details - ")) {
               this.details.push({
                 key: key.replace("Details - ", ""),
@@ -201,9 +197,7 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
               });
             }
           }
-          console.log(this.details, "+++++++++++++++++++++++++++");
 
-          // this.complainants = Object.keys(this.formData.complainant)
           this.show = true;
         }
         this.subscription.unsubscribe();
@@ -236,7 +230,6 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
 
       const attachment_html = document.getElementById("pdf-container")
         .innerHTML;
-      console.log(attachment_html);
       const case_type = "Group";
       this.formData.home = {
         case_type: case_type,
@@ -248,7 +241,7 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
       this.http
         .post(
           this.platformLocation.getBaseHrefFromDOM() +
-            "api/v1/survey-submit/test_collection/test_key",
+          "api/v1/survey-submit/test_collection/test_key",
           this.formData
         )
         .toPromise()

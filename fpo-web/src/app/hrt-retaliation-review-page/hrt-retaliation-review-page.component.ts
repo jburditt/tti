@@ -70,7 +70,7 @@ export class HrtRetaliationReviewPageComponent implements OnInit, OnDestroy {
           "Complainant Contact Cell Phone number": "123@123.ca",
           "Complainant Contact Fax": "123",
           "Complainant Contact Email": "123",
-          "Respondents Contact Information": [
+          "Respondent's Contact Information": [
             {
               "Name of the Respondent": "r2",
               "Respondent Contact Email": "312@boss.ca",

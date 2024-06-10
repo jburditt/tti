@@ -29,7 +29,7 @@ export class HrtGroupIndigenousPageComponent implements OnInit, OnDestroy {
             type: "html",
             name: "question1",
             html:
-              '<p>Indigenous or Aboriginal Peoples are First Nations, Métis, or Inuit.</p><p>The Tribunal is committed to Truth and Reconciliation with Indigenous Peoples. This includes: <p><ul style="margin-bottom: 0;"><li>explaining the process and process options</li><li>incorporating Indigenous protocols or ways of resolving disputes in the process.</li></ul></p>',
+              '<p>Indigenous Peoples are First Nations, Métis, or Inuit.<p>Indigenous Navigators at the Tribunal can:<ul><li>Explain the process and options<li>Discuss incorporating Indigenous protocols and ways of resolving disputes.</ul><p>Check here if you are First Nations, Métis, or Inuit and want an Indigenous Navigator to contact you about the process.',
           },
           {
             type: "checkbox",
