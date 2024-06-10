@@ -27,7 +27,7 @@
         "Complainant Contact Cell Phone number": "3213213211",// Optional
         "Complainant Contact Fax": "1231231231", // Optional
         "Complainant Contact Email": "123@12312.ca",
-        "Respondents Contact Information": [
+        "Respondent's Contact Information": [
             {
                 "Name of the Respondent": "John Respondent ",
                 "Respondent Contact Email": "123@123.ca",

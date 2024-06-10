@@ -26,17 +26,17 @@ export class HrtGroupRespondentContactInformationPageComponent
 
     pages: [
       {
-        name: "Respondent Contact Information",
+        name: "Who discriminated against you (Respondent)?",
         elements: [
           {
             type: "html",
             name: "question5",
             html:
-              "<h4>\nImportant information about Respondents:\n</h4>\n<ol>\n<li>\nThe Respondent is the person or organization you say discriminated. Usually, there is only one.\n</li>\n<li>Usually the Respondent is an organization such as: corporate employer, landlord, government body, service provider, business or union. Organizations are usually responsible for their employees’ actions. Make the organization Respondent #1.</li>\n<li>An individual can be a Respondent. Only name the person who you say discriminated against you. For example, name the person who harassed you. Do not name the person who only handed you a letter firing you.</li>\n</ol>\n<p>\n<strong>Email:</strong> Email is fastest. If possible, give an email address where we can send your complaint. Choose someone that you think has authority to respond to your complaint. For example, someone in the human resources, or legal department. </p>",
+              "<p><strong>Information about Respondents:</strong></p>Usually, there is only <strong>one</strong> Respondent. Usually, the only Respondent is an <strong>organization</strong> such as:<ul><li>A company or business that employed you, in a complaint about employment.<li>A landlord, in a complaint about a tenancy.<li>A government body or business, in a complaint about services.<li>A union, in a complaint about union membership. Organizations are usually responsible for their employees’ conduct.</ul><p>Only name another respondent if they are responsible for the same discrimination that this complaint is about.<p>Only name a person as a respondent if:<ul><li>the person discriminated against you, and<li>you have a reason to seek a remedy against them. For example:</li><ul><li>no one else is responsible for the discrimination,<li>no one else can provide the remedy, or<li>the person’s conduct deserves a remedy</ul></ul>",
           },
           {
             type: "paneldynamic",
-            name: "Respondents Contact Information",
+            name: "Respondent's Contact Information",
             templateElements: [
               {
                 type: "text",
@@ -50,32 +50,32 @@ export class HrtGroupRespondentContactInformationPageComponent
                 title:
                   "Relationship to group or class members (For example, employer)",
                 isRequired: true,
-		            maxLength: 255,
+                maxLength: 255,
               },
               {
                 type: "text",
                 name: "Respondent Contact Email",
                 width: "40%",
                 title: "Email",
-		            maxLength: 255,
-                validators: [ { type: "email" } ],
+                maxLength: 255,
+                validators: [{ type: "email" }],
                 // isRequired: true,
               },
               {
                 type: "text",
                 name: "Mailing address",
-		            maxLength: 240,
+                maxLength: 240,
                 isRequired: true,
               },
               {
                 type: "text",
                 name: "Address line 2",
-		            maxLength: 240,
+                maxLength: 240,
               },
               {
                 type: "text",
                 name: "City",
-		            maxLength: 40,
+                maxLength: 40,
                 isRequired: true,
               },
               {
@@ -102,7 +102,7 @@ export class HrtGroupRespondentContactInformationPageComponent
               {
                 type: "text",
                 name: "Postal Code",
-		            maxLength: 10,
+                maxLength: 10,
                 startWithNewLine: false,
                 // isRequired: true,
               },
@@ -111,14 +111,14 @@ export class HrtGroupRespondentContactInformationPageComponent
                 name: "Respondent Contact Phone number",
                 width: "33%",
                 title: "Phone number  ",
-		            maxLength: 255,
+                maxLength: 255,
                 // isRequired: true,
               },
               {
                 type: "text",
                 name: "Respondent Contact Cell Phone number",
                 width: "30%",
-		            maxLength: 255,
+                maxLength: 255,
                 startWithNewLine: false,
                 title: "Cell phone number",
               },
@@ -126,7 +126,7 @@ export class HrtGroupRespondentContactInformationPageComponent
                 type: "text",
                 name: "Respondent Contact Fax",
                 width: "33%",
-		            maxLength: 255,
+                maxLength: 255,
                 startWithNewLine: false,
                 title: "Fax",
               },

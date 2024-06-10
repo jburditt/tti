@@ -64,7 +64,7 @@
       "Explain how the alleged discrimination is similar for all group or class members.": "123"
     },
     "respondentContact": { // same as individual
-      "Respondents Contact Information": [
+      "Respondent's Contact Information": [
         {
           "Name of the Respondent": "John Doe",
           "Respondent Contact Email": "123@123.ca",
