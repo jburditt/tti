@@ -123,6 +123,12 @@
       <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">
         Respondents:
       </h4>
+      <p>
+        <b>I want to name the organization that discriminated against me:</b>
+        {{ formData.partyInfo["Check here to confirm you want to name an organization as Respondent #1."] ? "Yes"
+        :
+        "No" }}
+      </p>
       <div
         style="margin-bottom: 20px;"
         *ngFor="
@@ -846,7 +852,12 @@
           <h4>
             Respondent contact information
           </h4>
-
+          <p>
+            <b>I want to name the organization that discriminated against me:</b>
+            {{ formData.partyInfo["Check here to confirm you want to name an organization as Respondent #1."] ? "Yes"
+            :
+            "No" }}
+          </p>
           <div
             style="margin-bottom: 20px;"
             *ngFor="
