@@ -29,7 +29,7 @@ export class HrtGroupIndigenousPageComponent implements OnInit, OnDestroy {
             type: "html",
             name: "question1",
             html:
-              '<p>Indigenous Peoples are First Nations, Métis, or Inuit.<p>Indigenous Navigators at the Tribunal can:<ul><li>Explain the process and options<li>Discuss incorporating Indigenous protocols and ways of resolving disputes.</ul><p>Check here if you are First Nations, Métis, or Inuit and want an Indigenous Navigator to contact you about the process.',
+              '<p>Indigenous Peoples are First Nations, Métis, or Inuit.<p>Indigenous Navigators at the Tribunal can:<ul><li>Explain the process and options<li>Discuss incorporating Indigenous protocols and ways of resolving disputes.</ul>',
           },
           {
             type: "checkbox",
@@ -37,7 +37,7 @@ export class HrtGroupIndigenousPageComponent implements OnInit, OnDestroy {
             hideNumber: true,
             titleLocation: "hidden",
             choices: [
-              "Check here if you are First Nations, Métis or Inuit and are interested in the Tribunal contacting you to talk about the process",
+              "Check here if you are First Nations, Métis or Inuit and want an Indigenous Navigator to contact you about the process.",
             ],
           },
         ],
