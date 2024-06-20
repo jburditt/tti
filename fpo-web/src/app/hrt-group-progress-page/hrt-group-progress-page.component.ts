@@ -96,7 +96,7 @@ export class HrtGroupProgressPageComponent implements OnInit, OnDestroy {
   ];
   steps2 = [
     {
-      name: " Respondent Contact Information",
+      name: " Respondent Information",
       intro: "",
       url: "hrt-group/respondent-contact-info",
       short_name: "respondentContact",

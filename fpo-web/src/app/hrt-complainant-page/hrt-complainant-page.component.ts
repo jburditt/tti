@@ -269,7 +269,7 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
                 type: "html",
                 name: "question6",
                 html:
-                  "<p>Give the correct legal name. (Read about <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >how to find the correct legal name</a> under <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >Naming a Respondent</a> at <a href=https://www.bchrt.bc.ca/ >www.bchrt.ca</a>)."
+                  "<p>Give the correct legal name. (Read about <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >how to find the correct legal name</a> under <a href=https://www.bchrt.bc.ca/complaint-process/complain/naming-respondents/ >Naming a Respondent</a> at <a href=https://www.bchrt.bc.ca/ >bchrt.ca</a>)."
               },
               {
                 type: "text",
