@@ -37,7 +37,7 @@ export class HrtGroupIndigenousPageComponent implements OnInit, OnDestroy {
             hideNumber: true,
             titleLocation: "hidden",
             choices: [
-              "Check here if you are First Nations, Métis or Inuit and want an Indigenous Navigator to contact you about the process.",
+              "I confirm I am First Nations, Métis or Inuit. I want an Indigenous Navigator to contact me about the process.",
             ],
           },
         ],
