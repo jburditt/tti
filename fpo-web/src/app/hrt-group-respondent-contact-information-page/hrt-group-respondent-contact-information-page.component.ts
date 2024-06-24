@@ -26,7 +26,7 @@ export class HrtGroupRespondentContactInformationPageComponent
 
     pages: [
       {
-        name: "Who discriminated against you (Respondent)?",
+        name: "Who discriminated against the group or class (Respondent)?",
         elements: [
           {
             type: "html",
@@ -39,8 +39,8 @@ export class HrtGroupRespondentContactInformationPageComponent
             name: "Check here to confirm you want to name an organization as Respondent #1.",
             choices: [
               {
-                value: "Yes, I want to name the organization that discriminated against me. ",
-                text: "Yes, I want to name the organization that discriminated against me. ",
+                value: "Yes, I want to name the organization that descriminated against the group or class.",
+                text: "Yes, I want to name the organization that descriminated against the group or class.",
               },
             ],
           },
@@ -51,6 +51,7 @@ export class HrtGroupRespondentContactInformationPageComponent
               {
                 type: "text",
                 name: "Name of the Respondent",
+                description: " [If naming an employer, give the name and address from a paystub, T4, or employment contract.]",
                 maxLength: 40,
                 isRequired: true,
               },
@@ -65,8 +66,8 @@ export class HrtGroupRespondentContactInformationPageComponent
               {
                 type: "text",
                 name: "Respondent Contact Email",
-                width: "40%",
                 title: "Email",
+                description: "Email is fastest. If possible, give an email address where we can send your complaint. Choose someone that you think has authority to respond to your complaint. For example, the owner, executive director, or someone in the human resources or legal department.",
                 maxLength: 255,
                 validators: [{ type: "email" }],
                 // isRequired: true,
