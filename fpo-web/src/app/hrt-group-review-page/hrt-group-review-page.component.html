@@ -282,11 +282,8 @@
     <h3>
       Respondent Contact Information
     </h3>
-    <p>
-      <b>I want to name the organization that discriminated against me:</b>
-      {{ formData.respondentContact["Check here to confirm you want to name an organization as Respondent #1."] ?
-      "Yes" :
-      "No" }}
+    <p *ngIf="formData.respondentContact['Check here to confirm you want to name an organization as Respondent #1.']">
+      <b>I want to name the organization that discriminated against me: </b>Yes
     </p>
     <div class="grey-box">
       <div
@@ -1145,11 +1142,8 @@
         <h2>
           Step 4 - Respondent Contact Information
         </h2>
-        <p>
-          <b>I want to name the organization that discriminated against me:</b>
-          {{ formData.respondentContact["Check here to confirm you want to name an organization as Respondent #1."] ?
-          "Yes" :
-          "No" }}
+        <p *ngIf="formData.respondentContact['Check here to confirm you want to name an organization as Respondent #1.']">
+          <b>I want to name the organization that discriminated against me: </b>Yes
         </p>
         <div
           style="margin-bottom: 20px;"
