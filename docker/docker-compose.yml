@@ -5,6 +5,7 @@ services:
   # 
   fpo-web:
     image: fpo-angular-on-nginx
+    container_name: web
     environment:
       - API_URL=${API_URL}
       - IpFilterRules=${IpFilterRules}
@@ -18,6 +19,7 @@ services:
 
   fpo-web-dev:
     image: fpo-angular-dev
+    container_name: web-dev
     environment:
       - API_URL=${API_URL}
       - DEV_MODE=false
@@ -49,6 +51,7 @@ services:
   # 
   fpo-api:
     image: fpo-django
+    container_name: api
     environment:
       - DATABASE_SERVICE_NAME=${DATABASE_SERVICE_NAME}
       - DATABASE_ENGINE=${DATABASE_ENGINE}
@@ -91,6 +94,7 @@ services:
   #
   schema-spy:
     image: schema-spy
+    container_name: spy
     environment:
       - DATABASE_SERVICE_NAME=${DATABASE_SERVICE_NAME}
       - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
@@ -111,11 +115,13 @@ services:
   # fpo-db
   # 
   fpo-db:
-    image: registry.access.redhat.com/rhscl/postgresql-95-rhel7@sha256:155cf81a3d3a8bbcab3a1f61b177cab75a4105306146d172ef8fb29488cf58b4
+    #image: registry.access.redhat.com/rhscl/postgresql-95-rhel7@sha256:155cf81a3d3a8bbcab3a1f61b177cab75a4105306146d172ef8fb29488cf58b4
+    image: postgres:9.5
+    container_name: db
     environment:
-      - POSTGRESQL_USER=${POSTGRESQL_USER}
-      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
-      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+      - POSTGRES_USER=${POSTGRESQL_USER}
+      - POSTGRES_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRES_DATABASE=${POSTGRESQL_DATABASE}
     networks:
       - fpo
     ports:
@@ -128,6 +134,7 @@ services:
   # 
   fpo-pdf:
     image: aquavitae/weasyprint
+    container_name: pdf
     networks:
       - fpo
     ports:
