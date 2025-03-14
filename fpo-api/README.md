@@ -4,6 +4,10 @@
 
 The API provides an interface into the database for Family Protection Order.
 
+## Prerequisites
+
+Python 3.6 environment
+
 ## Development
 
 The API is developed in Django/Python, using a Visual Studio 2017 project.
