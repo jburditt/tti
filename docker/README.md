@@ -1,3 +1,9 @@
+# UPDATE March 14, 2025
+
+This project has not been updated in 5 years. I had only partial success running the docker-compose, I would recommend using the subfolders in this docker folder to run the dockers individually i.e. api, db, and web. You can run the commands found in the .sh scripts.
+
+Below is the documentation from 2020:
+
 # Running with Docker Compose
 
 The following instructions provide details on how to deploy the project using Docker Compose.  This method of deployment is intended for local development and demonstration purposes.  It is **NOT** intended to support production level deployments where security, availability, resilience, and data integrity are important.
@@ -92,6 +98,10 @@ Since the services are started interactively, you will have to issue this comman
 * Schema-Spy is exposed at; http://localhost:8082/
 * PDF service is exposed at; http://localhost:8083/
 * The database is exposed at; localhost:5432
+
+## Notes
+
+docker login -u jburditt "https://index.docker.io/v1/"
 
 ### Podman
 

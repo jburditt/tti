@@ -110,14 +110,6 @@ build-web-dev() {
     'fpo-angular-dev'
 }
 
-build-db() {
-  #
-  # fpo-db
-  #
-  # Nothing to build here ...
-  echo
-}
-
 build-schema-spy() {
   #
   # schema-spy
@@ -135,7 +127,7 @@ build-api() {
   echo -e "\nBuilding django image ..."
   ${S2I_EXE} build \
     '../fpo-api' \
-    'centos/python-36-centos7' \
+    'centos/python-38-centos7' \
     'fpo-django'
 }
 
@@ -150,7 +142,6 @@ build-pdf() {
 
 buildImages() {
   build-web
-  build-db
   build-schema-spy
   build-api
   build-pdf
@@ -179,9 +170,6 @@ configureEnvironment () {
 
   # schema-spy
   export DATABASE_SERVICE_NAME="fpo-db"
-  export POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
-  export POSTGRESQL_USER=${POSTGRESQL_USER}
-  export POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
 
   # fpo-api
   export API_HTTP_PORT=${API_HTTP_PORT-8081}

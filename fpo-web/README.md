@@ -7,3 +7,7 @@ The Web implements the user interface for Family Protection Order, calling the A
 ## Development
 
 To deploy Family Protection Order on an instance of OpenShift, see [the instructions](../RunningLocal.md) in the file RunningLocal.md.
+
+## Resources
+
+https://surveyjs.io/form-library/documentation/get-started-angular
