@@ -1,3 +1,9 @@
+# UPDATE March 14, 2025
+
+This project has not been updated in 5 years. I had only partial success running the docker-compose, I would recommend using the subfolders in this docker folder to run the dockers individually i.e. api, db, and web. You can run the commands found in the .sh scripts.
+
+Below is the documentation from 2020:
+
 # Running with Docker Compose
 
 The following instructions provide details on how to deploy the project using Docker Compose.  This method of deployment is intended for local development and demonstration purposes.  It is **NOT** intended to support production level deployments where security, availability, resilience, and data integrity are important.
@@ -16,8 +22,17 @@ The benefits to using this approach are;
 
 * Docker and Docker Compose
   * Install and configure Docker and Docker Compose on your system.  The recommended approach is to use either [Homebrew](https://brew.sh/) (MAC) or [Chocolatey](https://chocolatey.org/) (Windows) to install Docker (which includes Docker Compose).
+  * To configure Docker on WSL see https://docs.docker.com/desktop/features/wsl/ and check Docker Desktop -> Settings -> Resources -> WSL Integration -> Enable integration with additional distros: <select applicable profile>
+* podman is possible but more work is required, see note on "podman" below
 * The S2I CLI
   * Download and install the S2I CLI tool; [source-to-image](https://github.com/openshift/source-to-image)
+    * To install on Linux 64-bit run
+```
+wget https://github.com/openshift/source-to-image/releases/download/v1.4.0/source-to-image-v1.4.0-d3544c7e-linux-amd64.tar.gz
+tar -xvzf source-to-image-v1.4.0-d3544c7e-linux-amd64.tar.gz
+sudo cp s2i /usr/local/bin
+sudo cp sti /usr/local/bin
+```
   * Make sure it is available on your `PATH`.  The `manage.sh` will look for the `s2i` executable on your `PATH`.  If it is not found you will get a message asking you to download and set it on your `PATH`.
 * If you are working on Windows, use Git Bash (or equivalent shell) to run the scripts.
 * Fork and clone a local working copy of the project source code.
@@ -83,3 +98,23 @@ Since the services are started interactively, you will have to issue this comman
 * Schema-Spy is exposed at; http://localhost:8082/
 * PDF service is exposed at; http://localhost:8083/
 * The database is exposed at; localhost:5432
+
+## Notes
+
+docker login -u jburditt "https://index.docker.io/v1/"
+
+### Podman
+
+The following steps will get you started on using docker instead of podman but more steps are required and the effort may not be worth it.
+```
+sudo apt-get podman
+code ~/.bashrc
+alias docker=podman  # add this to last line of .bashrc
+docker --version     # verify podman alias
+code /etc/containers/registries.conf
+# add this line to bottom of registries.conf
+unqualified-search-registries = ["docker.io"]
+systemctl enable --user podman.socket
+systemctl start --user podman.socket
+systemctl status --user podman.socket
+```
