@@ -44,13 +44,11 @@
 
       <p>
         <b>How do you want to be addressed:</b>
-        {{ formData.partyInfo["Title"] ? formData.partyInfo["Title"] : "N/A" }}
+        {{ formData.partyInfo["Title-Comment"] ? formData.partyInfo["Title-Comment"] : (formData.partyInfo["Title"] ? formData.partyInfo["Title"] : "N/A") }}
       </p>
       <p>
         <b>Pronoun:</b>
-        {{
-        formData.partyInfo["Pronoun"] ? formData.partyInfo["Pronoun"] : "N/A"
-        }}
+        {{ formData.partyInfo["Pronoun-Comment"] ? formData.partyInfo["Pronoun-Comment"] : (formData.partyInfo["Pronoun"] ? formData.partyInfo["Pronoun"] : "N/A") }}
       </p>
       <!-- <p>
         <b>Other names:</b>
@@ -68,26 +66,22 @@
         ">
         <p>
           <b>The person who will communicate with the Tribunal:</b><br />
-          {{
-          formData.partyInfo[
-          "Name of the person who will communicate with the Tribunal, if different from the Complainant"
-          ]
-          }}
+          {{ formData.partyInfo["Name of the person who will communicate with the Tribunal"] }}
         </p>
         <p>
-          {{ formData.partyInfo["First name"] }}
-          {{ formData.partyInfo["Last name"] }}
-          {{
-          formData.partyInfo["Pronoun"]
-          ? " (" + formData.partyInfo["Pronoun"] + ")"
-          : ""
-          }}
+          <b>First Name:</b> {{ formData.partyInfo["First name"] }}
         </p>
         <p>
-          <b>
-            Title:
-          </b>
-          {{ formData.partyInfo["Contact Title"] }}
+          <b>Last Name:</b> {{ formData.partyInfo["Last name"] }}
+        </p>
+        <p>
+          <b>Preferred name:</b> {{ formData.partyInfo["Contact Preferred name - e.g. traditional name, nickname, alias"] }}
+        </p>
+        <p>
+          <b>Organization name (e.g. law firm, if applicable):</b> {{ formData.partyInfo["Organization name"] }}
+        </p>
+        <p>
+          <b>Title:</b> {{ formData.partyInfo["Contact Title-Comment"] ? formData.partyInfo["Contact Title-Comment"] : formData.partyInfo["Contact Title"] }}
         </p>
       </div>
       <div>
@@ -707,28 +701,10 @@
               }}</b>
           </p>
           <p>
-            <b>
-              Title:
-
-              {{
-              formData.partyInfo["Title"]
-              ? formData.partyInfo["Title"] === "other"
-              ? formData.partyInfo["Title-Comment"]
-              : formData.partyInfo["Title"]
-              : ""
-              }}</b>
+            <b>Title:</b> {{ formData.partyInfo["Title-Comment"] ? formData.partyInfo["Title-Comment"] : (formData.partyInfo["Title"] ? formData.partyInfo["Title"] : "N/A") }}
           </p>
           <p>
-            <b>
-              Pronoun:
-
-              {{
-              formData.partyInfo["Pronoun"]
-              ? formData.partyInfo["Pronoun"] === "other"
-              ? formData.partyInfo["Pronoun-Comment"]
-              : formData.partyInfo["Pronoun"]
-              : ""
-              }}</b>
+            <b>Pronoun:</b> {{ formData.partyInfo["Pronoun-Comment"] ? formData.partyInfo["Pronoun-Comment"] : (formData.partyInfo["Pronoun"] ? formData.partyInfo["Pronoun"] : "N/A") }}
           </p>
         </div>
         <ng-container
