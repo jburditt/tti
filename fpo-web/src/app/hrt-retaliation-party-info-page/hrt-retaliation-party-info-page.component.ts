@@ -398,17 +398,13 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
   }
 
   renderSurvey() {
-    console.log("hi!1");
     // let surveyModel =
     this.survey = new Survey.Model(this.json);
     this.survey.maxOthersLength = 255;
     if (this.formData) {
-      console.log("hi122!");
       this.survey.data = this.formData;
     }
-    console.log("hi!2");
     Survey.SurveyNG.render("surveyElementHRT", { model: this.survey });
-    console.log("hi!3");
   }
   handlePreviousStep() {
     if (this.survey.isFirstPage) {
@@ -418,8 +414,6 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
     // this.currentPageTitle = this.survey.currentPage.title;
   }
   handleNextStep() {
-    console.log("DATA", this.survey.data);
-    //console.log("CONTACT TITLE", this.survey.data.partyInfo);
     if (this.survey.isLastPage) {
       const validated = this.survey.completeLastPage();
       if (validated) {
