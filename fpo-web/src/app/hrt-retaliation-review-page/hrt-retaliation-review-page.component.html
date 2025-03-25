@@ -83,6 +83,9 @@
         <p>
           <b>Title:</b> {{ formData.partyInfo["Contact Title-Comment"] ? formData.partyInfo["Contact Title-Comment"] : formData.partyInfo["Contact Title"] }}
         </p>
+        <p>
+          <b>Pronoun:</b> {{ formData.partyInfo["Contact Pronoun-Comment"] ? formData.partyInfo["Contact Pronoun-Comment"] : formData.partyInfo["Contact Pronoun"] }}
+        </p>
       </div>
       <div>
         <p>
@@ -922,6 +925,9 @@
               formData.roleInComplaint["What is your role in the complaint?"]
               }}</b>
           </p>
+          <p>
+            <b>If you helped with the complaint, how did you help?</b>
+            {{ formData.roleInComplaint["If you helped with the complaint, how did you help?"] }}
           <p>
             <b>
               How did the Respondent(s) know about your role?
