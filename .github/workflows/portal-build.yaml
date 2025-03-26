@@ -1,4 +1,4 @@
-name: Portal App - Build & Deploy to Dev
+name: Portal - Build Development
 
 on:
   workflow_dispatch:

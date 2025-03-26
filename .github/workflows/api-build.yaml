@@ -1,4 +1,4 @@
-name: API Image - Build & Tag Dev
+name: API - Build Development
 
 on:
   workflow_dispatch:
