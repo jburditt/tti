@@ -68,11 +68,7 @@
         ">
         <p>
           <b>The person who will communicate with the Tribunal:</b><br />
-          {{
-          formData.partyInfo[
-          "Name of the person who will communicate with the Tribunal, if different from the Complainant"
-          ]
-          }}
+          {{ formData.partyInfo["Who will communicate with the Tribunal about this Complaint?"] }}
         </p>
         <p>
           {{ formData.partyInfo["First name"] }}
@@ -211,6 +207,12 @@
             What is your role in the complaint?
           </b>
           {{ formData.roleInComplaint["What is your role in the complaint?"] }}
+        </p>
+        <p>
+          <b>
+            If you helped with the complaint, how did you help?
+          </b>
+          {{ formData.roleInComplaint["If you helped with the complaint, how did you help?"] }}
         </p>
         <p>
           <b>
@@ -937,13 +939,20 @@
               {{ formData.roleInComplaint["When was the complaint filed?"] }}
             </b>
           </p>
-
           <p>
             <b>
               What is your role in the complaint?
 
               {{
               formData.roleInComplaint["What is your role in the complaint?"]
+              }}</b>
+          </p>
+          <p>
+            <b>
+              If you helped with the complaint, how did you help?
+
+              {{
+              formData.roleInComplaint["If you helped with the complaint, how did you help?"]
               }}</b>
           </p>
           <p>
