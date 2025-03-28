@@ -1076,13 +1076,10 @@
             <b>Respondent Name: {{ respondent["Respondent name"] }}</b>
           </p>
           <p>
-            <b>What is the date of the most recent conduct that you listed as
-              retaliation in the previous step?
-              {{
-              respondent[
-              "What is the date of the most recent event that you say is discrimination?"
-              ]
-              }}</b>
+            <b>
+              What is the date of the most recent conduct that you listed as retaliation in the previous step?
+              {{ respondent["What is the date of the most recent conduct that you say is retaliation?"] }}
+            </b>
           </p>
           <p>
             <b>Did the most recent conduct happen in the last year?
@@ -1124,14 +1121,10 @@
             'Yes'
           ">
           <p>
-            <b>Explain how the conduct is similar or related</b>
+            <b>Explain how the conduct is similar or related (a “continuing contravention”)</b>
           </p>
           <p>
-            <b>{{
-              formData.fileInTime[
-              "Explain how the conduct is similar or related"
-              ]
-              }}</b>
+            <b>{{ formData.fileInTime["Explain how the conduct is similar or related (a “continuing contravention”)"] }}</b>
           </p>
         </ng-container>
         <ng-container
