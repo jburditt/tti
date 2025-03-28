@@ -66,7 +66,7 @@
         ">
         <p>
           <b>The person who will communicate with the Tribunal:</b><br />
-          {{ formData.partyInfo["Name of the person who will communicate with the Tribunal"] }}
+          {{ formData.partyInfo["Who will communicate with the Tribunal about this Complaint?"] }}
         </p>
         <p>
           <b>First Name:</b> {{ formData.partyInfo["First name"] }}
@@ -171,7 +171,7 @@
     <div style="margin-top: 30px;"></div>
     <div style="margin-top: 30px;"></div>
     <h3>
-      Your Role in a Complaint or Inquiry
+      Your Role in a Complaint
     </h3>
     <div class="grey-box">
       <p>
@@ -208,6 +208,12 @@
             What is your role in the complaint?
           </b>
           {{ formData.roleInComplaint["What is your role in the complaint?"] }}
+        </p>
+        <p>
+          <b>
+            If you helped with the complaint, how did you help?
+          </b>
+          {{ formData.roleInComplaint["If you helped with the complaint, how did you help?"] }}
         </p>
         <p>
           <b>
@@ -879,20 +885,14 @@
       </div>
       <div class="section">
         <h2>
-          Step 2 - Your Role in a Complaint or Inquiry
+          Step 2 - Your Role in a Complaint
         </h2>
-        <h4>
-          Retaliation about a Complaint or Inquiry
-        </h4>
         <p>
           <b>
             Is the retaliation about:
-
-            {{ formData.roleInComplaint["Is the retaliation about"] }}</b>
+            {{ formData.roleInComplaint["Is the retaliation about"] }}
+          </b>
         </p>
-        <h4>
-          Retaliation about a complaint that someone filed
-        </h4>
         <ng-container
           *ngIf="
             formData.roleInComplaint['Is the retaliation about'] ===
@@ -916,7 +916,6 @@
               {{ formData.roleInComplaint["When was the complaint filed?"] }}
             </b>
           </p>
-
           <p>
             <b>
               What is your role in the complaint?
@@ -928,6 +927,14 @@
           <p>
             <b>If you helped with the complaint, how did you help?</b>
             {{ formData.roleInComplaint["If you helped with the complaint, how did you help?"] }}
+          </p>
+          <p>
+            <b>
+              If you helped with the complaint, how did you help?
+
+              {{
+              formData.roleInComplaint["If you helped with the complaint, how did you help?"]
+              }}</b>
           </p>
           <p>
             <b>
@@ -960,6 +967,40 @@
               "Why did the Respondent(s) think this?"
               ]
               }}</b>
+          </p>
+        </ng-container>
+        <ng-container
+          *ngIf="
+            formData.roleInComplaint['Is the retaliation about'] ===
+            'An inquiry by the Office of the Human Rights Commissioner'
+          ">
+          <p>
+            <b>
+              What is the Commissioner's inquiry about?
+            </b>
+            {{ formData.roleInComplaint["What is the Commissioner's inquiry about?"] }}
+          </p>
+          <p>
+            <b>
+              What is your role in the inquiry?
+            </b>
+            {{ formData.roleInComplaint["What is your role in the inquiry?"] }}
+          </p>
+          <p>
+            <b>
+              How did you take part? How might you take part?
+            </b>
+            {{
+            formData.roleInComplaint["How did you take part? How might you take part?"]
+            }}
+          </p>
+          <p>
+            <b>
+              How did the Respondent(s) know about your role?
+            </b>
+            {{
+            formData.roleInComplaint["How did the Respondent(s) know about your Role?"]
+            }}
           </p>
         </ng-container>
       </div>
