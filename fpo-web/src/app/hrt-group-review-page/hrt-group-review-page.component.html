@@ -70,15 +70,11 @@
           <b>Person who will communicate with the Tribunal: </b>
           {{ formData.representative["First name"] }}
           {{ formData.representative["Last name"] }}
-          {{
-          formData.representative["Representative Preferred name"]
-          ? "(" +
-          formData.representative["Representative Preferred name"] +
-          ")"
-          : ""
-          }}
         </p>
-
+        <p>
+          <b>Preferred name:</b>
+          {{ formData.representative["Representative Preferred name"] }}
+        </p>
         <p>
           <b>
             Title:
@@ -125,7 +121,7 @@
           {{ formData.representative["Fax"] || "NA" }}
         </p>
         <p>
-          Email:
+          <b>Email:</b>
           {{ formData.representative["Email"] || "NA" }}
         </p>
       </div>
@@ -204,7 +200,7 @@
         <b>
           If yes, explain.
         </b>
-        {{ formData.repSutability["If yes, explain"] }}
+        {{ formData.repSutability["If yes, explain. "] }}
       </p>
       <p>
         <b>
@@ -689,8 +685,8 @@
         <b>Primary Language</b>
         {{ formData.statisticalInformation["Primary Language"] || "N/A" }}
         {{
-        formData.statisticalInformation["Language-Comment"]
-        ? " - " + formData.statisticalInformation["Language-Comment"]
+        formData.statisticalInformation["Primary Language-Comment"]
+        ? " - " + formData.statisticalInformation["Primary Language-Comment"]
         : ""
         }}
       </p>
@@ -698,11 +694,12 @@
         <b>
           Disability requiring accommodation in employment and services
         </b>
-        {{
-        formData.statisticalInformation[
-        "Disability requiring accommodation in employment and services"
-        ] || "N/A"
-        }}
+        {{ formData.statisticalInformation["Disability requiring accommodation in employment and services"] || "N/A" }}
+        {{ 
+          formData.statisticalInformation["Disability requiring accommodation in employment and services-Comment"]
+          ? " - " + formData.statisticalInformation["Disability requiring accommodation in employment and services-Comment"]
+          : ""
+         }}
       </p>
       <p>
         <b>Gender Identity</b>
@@ -852,9 +849,8 @@
 
           <p>
             <b>
-              Who will communicate with the Tribunal:
-
-              {{ formData.representative["Select only one option"] }}</b>
+              Who will communicate with the Tribunal:</b>
+              {{ formData.representative["Select only one option"] }}
           </p>
 
           <h3>
@@ -871,8 +867,13 @@
             <p>
               <b>
                 Last name:
-
                 {{ formData.representative["Last name"] }}</b>
+            </p>
+            <p>
+              <b>
+                Preferred name:
+                {{ formData.representative["Representative Preferred name"] }}
+              </b>
             </p>
             <p>
               <b>
@@ -1035,7 +1036,7 @@
               </b>
             </p>
             <p>
-              <b> {{ formData.repSutability["If yes, explain"] }}</b>
+              <b> {{ formData.repSutability["If yes, explain. "] }}</b>
             </p>
           </ng-container>
           <p>
@@ -1125,7 +1126,7 @@
             <b>
               {{
               formData.complaintSutability[
-              "Explain how the alleged discrimination is similar for all group or class members"
+              "Explain how the alleged discrimination is similar for all group or class members."
               ]
               }}
             </b>
