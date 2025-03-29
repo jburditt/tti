@@ -1158,7 +1158,7 @@
               {{ respondent["Name of the Respondent"] }}</b>
           </p>
           <p>
-            <b>Relationship to you: {{ respondent["Relationship to you"] }}</b>
+            <b>Relationship to group or class members (For example, employer): {{ respondent["Relationship to group or class members"] }}</b>
           </p>
           <p>
             <b>Mailing Address:<br />
@@ -1244,8 +1244,8 @@
             <b>Respondent Name: {{ event.Respondent }}</b>
           </p>
           <p>
-            <b>Describe the harm you experienced in a few words :
-              {{ event["Describe the harm you experienced in a few words"] }}</b>
+            <b>Describe the harm the group or class members experienced in a few words:
+              {{ event["Describe the harm the group or class members experienced in a few words"] }}</b>
           </p>
           <p>
             <b>Explain how the harm relates to the grounds you have selected
@@ -1415,17 +1415,17 @@
           Step 8 - Other Proceedings
         </h2>
         <p>
-          <b>Do you have another proceeding about the same events?
+          <b>Does the group or class have another proceeding about the same events?
             {{
             formData.otherProceedings[
-            "Do you have another proceeding about the same events?"
+            "Does the group or class have another proceeding about the same events?"
             ]
             }}</b>
         </p>
         <ng-container
           *ngIf="
             formData.otherProceedings[
-              'Do you have another proceeding about the same events?'
+              'Does the group or class have another proceeding about the same events?'
             ] === 'Yes'
           ">
           <p>
@@ -1450,13 +1450,13 @@
           </p>
 
           <p>
-            <b>Do you want the Tribunal to wait to deal with your complaint?</b>
+            <b>Do you want the Tribunal to wait to deal with the complaint?</b>
           </p>
           <p>
             <b>
               {{
               formData.otherProceedings[
-              "Do you want the Tribunal to wait to deal with your complaint?"
+              "Do you want the Tribunal to wait to deal with the complaint?"
               ]
               }}</b>
           </p>
@@ -1464,14 +1464,14 @@
           <p
             *ngIf="
               formData.otherProceedings[
-                'Do you want the Tribunal to wait to deal with your complaint?'
+                'Do you want the Tribunal to wait to deal with the complaint?'
               ] === 'Yes'
             ">
             <b>Explain why you want the Tribunal to wait to deal with your
               complaint<br />
               {{
               formData.otherProceedings[
-              "Explain why you want the Tribunal to wait to deal with your complaint"
+              "Explain why you want the Tribunal to wait to deal with the complaint"
               ]
               }}</b>
           </p>
