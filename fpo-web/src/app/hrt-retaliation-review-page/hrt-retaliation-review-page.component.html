@@ -66,7 +66,7 @@
         ">
         <p>
           <b>The person who will communicate with the Tribunal:</b><br />
-          {{ formData.partyInfo["Who will communicate with the Tribunal about this Complaint?"] }}
+          {{ formData.partyInfo["Select only one option"] }}
         </p>
         <p>
           <b>First Name:</b> {{ formData.partyInfo["First name"] }}
@@ -176,7 +176,7 @@
     <div class="grey-box">
       <p>
         <b>
-          Is the retaliation about:
+          What is the retaliation about:
         </b>
         {{ formData.roleInComplaint["Is the retaliation about"] }}
       </p>
@@ -732,8 +732,7 @@
           </div>
           <div>
             <h4>
-              Name of the Person who will communicate with the Tribunal (if
-              different from the Complainant)
+              Name of the Person who will communicate with the Tribunal
             </h4>
             <p>
               <b> First name: {{ formData.partyInfo["First name"] }} </b>
@@ -889,7 +888,7 @@
         </h2>
         <p>
           <b>
-            Is the retaliation about:
+            What is the retaliation about:
             {{ formData.roleInComplaint["Is the retaliation about"] }}
           </b>
         </p>
@@ -927,14 +926,6 @@
           <p>
             <b>If you helped with the complaint, how did you help?</b>
             {{ formData.roleInComplaint["If you helped with the complaint, how did you help?"] }}
-          </p>
-          <p>
-            <b>
-              If you helped with the complaint, how did you help?
-
-              {{
-              formData.roleInComplaint["If you helped with the complaint, how did you help?"]
-              }}</b>
           </p>
           <p>
             <b>
