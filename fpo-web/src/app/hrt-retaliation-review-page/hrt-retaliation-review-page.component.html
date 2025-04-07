@@ -579,8 +579,8 @@
         <b>Primary Language</b>
         {{ formData.statisticalInformation["Primary Language"] }}
         {{
-        formData.statisticalInformation["Language-Comment"]
-        ? " - " + formData.statisticalInformation["Language-Comment"]
+        formData.statisticalInformation["Primary Language-Comment"]
+        ? " - " + formData.statisticalInformation["Primary Language-Comment"]
         : ""
         }}
       </p>
@@ -588,11 +588,8 @@
         <b>
           Disability requiring accommodation in employment and services
         </b>
-        {{
-        formData.statisticalInformation[
-        "Disability requiring accommodation in employment and services"
-        ]
-        }}
+        {{ formData.statisticalInformation["Disability requiring accommodation in employment and services"] }}
+        {{ formData.statisticalInformation["Disability requiring accommodation in employment and services-Comment"] ? " - " + formData.statisticalInformation["Disability requiring accommodation in employment and services-Comment"] : "" }}
       </p>
       <p>
         <b>Gender Identity</b>
