@@ -46,7 +46,8 @@ export class HrtGroupRespondentContactInformationPageComponent
           },
           {
             type: "paneldynamic",
-            name: "Respondent's Contact Information",
+            name: "respondentsContactInformation",
+            title: "Respondent's Contact Information",
             templateElements: [
               {
                 type: "text",

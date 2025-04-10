@@ -267,7 +267,8 @@ export class HrtRetaliationPartyInfoPageComponent implements OnInit, OnDestroy {
             type: "paneldynamic",
             panelAddText: "ADD Another Respondent",
             panelRemoveText: "REMOVE Above Respondent",
-            name: "Respondent's Contact Information",
+            name: "respondentsContactInformation",
+            title: "Respondent's Contact Information",
             templateElements: [
               {
                 type: "text",
