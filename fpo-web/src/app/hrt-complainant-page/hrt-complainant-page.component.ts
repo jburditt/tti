@@ -263,7 +263,8 @@ export class HrtComplainantPageComponent implements OnInit, OnDestroy {
           },
           {
             type: "paneldynamic",
-            name: "Respondent's Contact Information",
+            name: "respondentsContactInformation",
+            title: "Respondent's Contact Information",
             templateElements: [
               {
                 type: "html",
