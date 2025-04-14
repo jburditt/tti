@@ -13,6 +13,3 @@ docker run --rm -it -d --name fpo-api --network fpo -p 8080:8080 -v ./fpo-api:/a
 -e DJANGO_DEBUG=True \
 -e FPO_DB_SERVICE_HOST="fpo-db" \
 -e FPO_DB_SERVICE_PORT=5432
-
-docker build --build-context src=../fpo-api/ requirements=../fpo-api/requirements.txt ./api/ -t fpo-api
-#docker run -p 8080:8080 fpo-api 

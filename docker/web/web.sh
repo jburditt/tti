@@ -11,23 +11,11 @@ echo -e "\nBuilding nginx-runtime image ..."
     -t 'nodejs-build' \
     -f '../fpo-web/openshift/templates/nodejs-build/Dockerfile' '../fpo-web/openshift/templates/nodejs-build/'
 
-  echo -e "\nBuilding angular-on-nginx image ..."
-  ${S2I_EXE} build \
-    -e "NPM_CONFIG_COLOR=always" \
-    -e "NPM_CONFIG_LOGLEVEL=timing" \
-#    -e "HTTP_PROXY=${HTTP_PROXY}" \
-#    -e "HTTPS_PROXY=${HTTPS_PROXY}" \
-    -v "fpo_fpo-npm-cache:/opt/app-root/src/.npm" \
-    --runtime-image nginx-runtime \
-    -a /opt/app-root/src/dist:app \
-    '../fpo-web' \
-    'nodejs-build' \
-    'fpo-angular-on-nginx'
+echo -e "\nBuilding angular-on-nginx image ..."
 
+# run this to build the image with latest code changes
+s2i build -e "NPM_CONFIG_COLOR=always" -e "NPM_CONFIG_LOGLEVEL=timing" -v "fpo_fpo-npm-cache:/opt/app-root/src/.npm" --runtime-image nginx-runtime -a /opt/app-root/src/dist:app '../fpo-web' 'nodejs-build' 'fpo-angular-on-nginx'
 
-#------------------------------
-# run
-
-docker build ./docker/web/ -t fpo-web
+# run from docker folder
+docker build ./web/ -t fpo-web
 docker run --rm -p 80:8080 --network fpo --name fpo-web fpo-web
-
