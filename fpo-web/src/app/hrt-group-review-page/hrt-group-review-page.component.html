@@ -19,6 +19,9 @@
       Representative and Group or Class
     </h3>
     <div class="grey-box">
+      <p>
+          <b>The representative is:</b> {{ formData.representative["Is the representative"] }}
+      </p>
       <p *ngIf="formData.representative['Organization Name']">
         <b>Organization Name:</b>
         {{ formData.representative["Organization Name"] }}
@@ -58,7 +61,9 @@
         : "N/A"
         }}
       </p>
-
+      <p>
+        <b>Who will communicate with the Tribunal:</b> {{ formData.representative["Select only one option"] }}
+      </p>
       <div style="margin-top: 30px;"></div>
 
       <div
@@ -74,6 +79,9 @@
         <p>
           <b>Preferred name:</b>
           {{ formData.representative["Representative Preferred name"] }}
+        </p>
+        <p>
+          <b>Organization name:</b> {{ formData.representative["Representative Organization Name"] }}
         </p>
         <p>
           <b>
@@ -250,6 +258,12 @@
           {{ term }}
         </li>
       </ul>
+      <ul style='padding-left: 100px;'>
+        <li>learn about the complaint process</li>
+        <li>ask the Tribunal to accommodate the needs of group or class members so they can take part in the process;</li>
+        <li>gather evidence to support the complaint and put forward the best possible case to the Tribunal; and</li>
+        <li>decide whether to hire a lawyer or legal advocate and instruct that person.</li>
+      </ul>    
     </div>
     <div style="margin-top: 30px;"></div>
     <h3>
@@ -789,8 +803,7 @@
           Who is representing the group or class (Representative)?
         </h3>
         <p>
-          <b>Is the representative:</b>
-          {{ formData.representative["Is the representative:"] }}
+          <b>The representative is:</b> {{ formData.representative["Is the representative"] }}
         </p>
         <p *ngIf="formData.representative['Organization Name']">
           <b>Organization Name:</b>
@@ -842,13 +855,9 @@
           <h3>
             Who will communicate with the Tribunal about this Complaint?
           </h3>
-
           <p>
-            <b>
-              Who will communicate with the Tribunal:</b>
-              {{ formData.representative["Select only one option"] }}
+            <b>Who will communicate with the Tribunal:</b> {{ formData.representative["Select only one option"] }}
           </p>
-
           <ng-container
             *ngIf="
               formData.representative['Select only one option'] !==
@@ -1085,6 +1094,12 @@
               {{ term }}
             </li>
           </ul>
+          <ul style='padding-left: 100px;'>
+            <li>learn about the complaint process</li>
+            <li>ask the Tribunal to accommodate the needs of group or class members so they can take part in the process;</li>
+            <li>gather evidence to support the complaint and put forward the best possible case to the Tribunal; and</li>
+            <li>decide whether to hire a lawyer or legal advocate and instruct that person.</li>
+          </ul>
         </div>
       </div>
       <br />
@@ -1124,7 +1139,7 @@
       <br />
       <div>
         <h2>
-          Part 1: Group or Class and Suitability
+          Part 2: Group or Class and Suitability
         </h2>
       </div>
       <div class="section">

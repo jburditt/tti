@@ -3,7 +3,7 @@
       "form_timeout": "I am using a public computer (i.e. library, internet café, Service BC location)"
     },
     "representative": {
-      "Is the representative:": "An organization",
+      "Is the representative": "An organization",
       "Organization Name": "123", // Optional
       "Individual Legal name – First name": "123",
       "Individual Legal Name – Last name": "321",

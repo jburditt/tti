@@ -48,7 +48,7 @@ export class HrtGroupRepresentativeComponent implements OnInit, OnDestroy {
         elements: [
           {
             type: "radiogroup",
-            name: "Is the representative:",
+            name: "Is the representative",
             isRequired: true,
             choices: ["An organization", "An individual"],
           },
@@ -61,20 +61,20 @@ export class HrtGroupRepresentativeComponent implements OnInit, OnDestroy {
           {
             type: "text",
             name: "Organization Name",
-            visibleIf: "{Is the representative:} = 'An organization'",
+            visibleIf: "{Is the representative} = 'An organization'",
             isRequired: true,
             maxLength: 255,
           },
           {
             type: "text",
             name: "Individual Legal name – First name",
-            "requiredIf": "{Is the representative:} = 'An individual'",
+            "requiredIf": "{Is the representative} = 'An individual'",
             maxLength: 40,
           },
           {
             type: "text",
             name: "Individual Legal Name – Last name",
-            "requiredIf": "{Is the representative:} = 'An individual'",
+            "requiredIf": "{Is the representative} = 'An individual'",
             maxLength: 40,
           },
           {
