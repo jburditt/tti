@@ -48,7 +48,7 @@ export class HrtGroupReviewPageComponent implements OnInit, OnDestroy {
   details = [];
   newFormData = JSON.parse(
     `{"representative":{
-        "Is the representative:": "An organization",
+        "Is the representative": "An organization",
         "Organization Name": "123",
         "Individual Legal name – First name": "123",
         "Individual Legal Name – Last name": "123",
