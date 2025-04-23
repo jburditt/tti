@@ -58,16 +58,15 @@
             : "N/A"
         }}
       </p> -->
-
+      <p>
+        <b>The person who will communicate with the Tribunal:</b><br />
+        {{ formData.partyInfo["Select only one option"] }}
+      </p>
       <div style="margin-top: 30px;"></div>
       <div
         *ngIf="
           formData.partyInfo['Select only one option'] !== 'The complainant'
         ">
-        <p>
-          <b>The person who will communicate with the Tribunal:</b><br />
-          {{ formData.partyInfo["Select only one option"] }}
-        </p>
         <p>
           <b>First Name:</b> {{ formData.partyInfo["First name"] }}
         </p>
@@ -658,8 +657,7 @@
         </h2>
         <p>
           <b>
-            Case Number:</b> ::Case.Name::
-          
+            Case Number:</b> ::Case.Name::    
         </p>
         <p>
           <b>Date Received:</b> {{ getCurrentDate() }} 
@@ -714,18 +712,18 @@
             <b>Pronoun:</b> {{ formData.partyInfo["Pronoun-Comment"] ? formData.partyInfo["Pronoun-Comment"] : (formData.partyInfo["Pronoun"] ? formData.partyInfo["Pronoun"] : "N/A") }}
           </p>
         </div>
+        <div>
+          <h3>
+            Who will communicate with the Tribunal about this Complaint?
+          </h3>
+          <p>
+            {{ formData.partyInfo["Select only one option"] }}
+          </p>
+        </div>
         <ng-container
           *ngIf="
             formData.partyInfo['Select only one option'] !== 'The complainant'
           ">
-          <div>
-            <h3>
-              Who will communicate with the Tribunal about this Complaint?
-            </h3>
-            <p>
-                {{ formData.partyInfo["Select only one option"] }}
-            </p>
-          </div>
           <div>
             <h3>
               Name of the Person who will communicate with the Tribunal
